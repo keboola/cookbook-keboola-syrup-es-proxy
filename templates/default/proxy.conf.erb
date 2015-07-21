@@ -2,7 +2,12 @@
   ServerName <%= @params[:server_name] %>
   ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
   <Location />
-    Require all granted
+    AuthType Basic
+    AuthName "Restricted Files"
+    AuthBasicProvider file
+    AuthUserFile "/etc/httpd/.htpasswd"
+
+    Require user keboola
     ProxyPass  "http://elasticsearch-syrup.internal.keboola.com:9200/"
     ProxyPassReverse "http://elasticsearch-syrup.internal.keboola.com:9200/"
   </Location>

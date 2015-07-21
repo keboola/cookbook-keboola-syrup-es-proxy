@@ -1,3 +1,7 @@
+
+
+default['keboola-syrup-es-proxy']['password'] = ''
+
 default['apache']['default_modules'] = %w[
   dir env mime negotiation setenvif
   status alias auth_basic authn_core authn_file authz_core authz_groupfile
