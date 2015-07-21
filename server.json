@@ -11,7 +11,7 @@
         },
         "ProxyPassword": {
           "Description": "Password which will be requested by proxy. Use some password generator.",
-          "Type": "String",
+          "Type": "String"
         },
        "SecurityGroupId": {
             "Description": "Security Group id",
