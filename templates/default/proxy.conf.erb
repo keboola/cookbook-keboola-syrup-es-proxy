@@ -2,8 +2,9 @@
   ServerName <%= @params[:server_name] %>
   ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
   <Location />
+    Require all granted
     ProxyPass  "http://elasticsearch-syrup.internal.keboola.com:9200/"
-    ProxyPassReverse "http://elasticsearch-syrup.internal.keboola.com:9200/"    
+    ProxyPassReverse "http://elasticsearch-syrup.internal.keboola.com:9200/"
   </Location>
 
 </VirtualHost>
